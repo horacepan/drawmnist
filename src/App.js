@@ -51,7 +51,6 @@ class MNISTBoard extends React.Component {
         this.weight = this.input.weight;
         this.bias = this.input.bias;
         this.decimal_places = this.input.decimal_places;
-        console.log(this.bias)
     }
 
     bindResetHandler = (func) => {
@@ -73,8 +72,6 @@ class MNISTBoard extends React.Component {
         var imgVec = this.grid.flat();
         var ypred = vecPlusVec(matByVec(this.weight, imgVec), this.bias);
         var pred = argMax(ypred);
-        console.log("Image vec to classify");
-        console.log(imgVec);
         this.setState({predClass: pred});
     }
 
